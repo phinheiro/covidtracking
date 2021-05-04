@@ -16,6 +16,7 @@ namespace BoxTI.Challenge.CovidTracking.Domain.Entities
             TotalCases = totalCases;
             TotalDeaths = totalDeaths;
             TotalRecovered = totalRecovered;
+            Active = true;
         }
 
         public int ActiveCases { get; private set; }
@@ -29,15 +30,5 @@ namespace BoxTI.Challenge.CovidTracking.Domain.Entities
         public bool Active { get; private set; }
 
         public bool Deactivate() => Active = false;
-        public void UpdateData(int activeCases, DateTime lastUpdate, string newCases, string newDeaths,
-                                int totalCases, int totalRecovered)
-        {
-            ActiveCases = activeCases;
-            LastUpdate = lastUpdate;
-            NewCases = newCases;
-            NewDeaths = newDeaths;
-            TotalCases = totalCases;
-            TotalRecovered = totalRecovered;
-        }
     }
 }
