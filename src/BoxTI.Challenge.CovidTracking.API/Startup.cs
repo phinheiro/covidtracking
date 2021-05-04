@@ -1,3 +1,4 @@
+using BoxTI.Challenge.CovidTracking.API.Extensions;
 using BoxTI.Challenge.CovidTracking.API.Setups;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,6 +14,7 @@ namespace BoxTI.Challenge.CovidTracking.API
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            ApiKeySettings.ApiKey = configuration["ApiKey"];
         }
 
         public IConfiguration Configuration { get; }
@@ -22,8 +24,16 @@ namespace BoxTI.Challenge.CovidTracking.API
         {
 
             services.AddControllers();
+
+            services.AddDatabases(Configuration);
+
             services.AddAutoMapperSetup();
+
+            services.AddVersioningSetup();
+
             services.AddSwaggerSetup();
+            
+            services.RegisterServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,7 +45,7 @@ namespace BoxTI.Challenge.CovidTracking.API
                 app.UseSwaggerSetup(provider);
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

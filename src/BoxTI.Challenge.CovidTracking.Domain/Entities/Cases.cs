@@ -19,6 +19,8 @@ namespace BoxTI.Challenge.CovidTracking.Domain.Entities
             Active = true;
         }
 
+        protected Cases() { }
+
         public int ActiveCases { get; private set; }
         public string Country { get; private set; }
         public DateTime LastUpdate { get; private set; }

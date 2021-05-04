@@ -54,5 +54,4 @@ namespace BoxTI.Challenge.CovidTracking.API.Setups
             });
         }
     }
-    }
 }

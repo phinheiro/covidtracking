@@ -28,7 +28,6 @@ namespace BoxTI.Challenge.CovidTracking.Application.ViewModels
         public int TotalDeaths { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [MinLength(1, ErrorMessage = "O valor do campo {0} não pode ser menor que {1}")]
         public int TotalRecovered { get; set; }
     }
 }

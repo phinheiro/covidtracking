@@ -11,7 +11,7 @@ namespace BoxTI.Challenge.CovidTracking.API.Setups
             if (services == null) 
                 throw new ArgumentNullException(nameof(services));
 
-            services.AddAutoMapper(typeof(DomainToViewModelMapping, typeof(ViewModelToDomainMapping));
+            services.AddAutoMapper(typeof(DomainToViewModelMapping), typeof(ViewModelToDomainMapping));
 
         }
     }

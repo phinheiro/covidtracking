@@ -10,7 +10,6 @@ namespace BoxTI.Challenge.CovidTracking.Data
     {
         public CTContext(DbContextOptions<CTContext> options) : base(options)
         {
-
         }
         public DbSet<Cases> Cases { get; set; }
 
@@ -21,6 +20,8 @@ namespace BoxTI.Challenge.CovidTracking.Data
                 property.SetColumnType("varchar(100)");
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CTContext).Assembly);
+
+            modelBuilder.Entity<Cases>().HasQueryFilter(c => c.Active);
         }
 
         public async Task<bool> Commit()
