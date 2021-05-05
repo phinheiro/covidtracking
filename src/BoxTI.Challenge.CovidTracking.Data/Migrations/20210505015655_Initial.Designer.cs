@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BoxTI.Challenge.CovidTracking.Data.Migrations
 {
     [DbContext(typeof(CTContext))]
-    [Migration("20210504193817_Initial")]
+    [Migration("20210505015655_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

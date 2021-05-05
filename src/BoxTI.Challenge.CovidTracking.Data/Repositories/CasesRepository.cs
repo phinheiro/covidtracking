@@ -24,10 +24,12 @@ namespace BoxTI.Challenge.CovidTracking.Data.Repositories
         public async Task<Cases> GetByCountryAsync(string country) =>
             await _context.Cases.FirstOrDefaultAsync(e => e.Country == country);
 
+        public async Task<bool> ExistData(string country) =>
+            await _context.Cases.AnyAsync(e => e.Country == country);
         public async Task<IEnumerable<Cases>> OrderByTotalCasesAsync() =>
-            await _context.Cases.AsNoTracking().OrderByDescending(e => e.TotalCases).ToListAsync();
+            await _context.Cases.AsNoTracking().Where(e => e.Country != "World").OrderByDescending(e => e.TotalCases).ToListAsync();
 
-        public void Add(Cases caseData) => _context.Add(caseData);
+        public void Add(List<Cases> caseData) => _context.AddRange(caseData);
 
         public void Update(Cases caseData) => _context.Update(caseData);
 

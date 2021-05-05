@@ -1,5 +1,6 @@
 using BoxTI.Challenge.CovidTracking.API.Extensions;
 using BoxTI.Challenge.CovidTracking.API.Setups;
+using BoxTI.Challenge.CovidTracking.ExternalServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -15,6 +16,8 @@ namespace BoxTI.Challenge.CovidTracking.API
         {
             Configuration = configuration;
             ApiKeySettings.ApiKey = configuration["ApiKey"];
+            CovidTrackingApiSettings.CTApiKey = configuration["CovidTrackingApi:ApiKey"];
+            CovidTrackingApiSettings.CTApiHost = configuration["CovidTrackingApi:ApiHost"];
         }
 
         public IConfiguration Configuration { get; }
@@ -45,7 +48,7 @@ namespace BoxTI.Challenge.CovidTracking.API
                 app.UseSwaggerSetup(provider);
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 

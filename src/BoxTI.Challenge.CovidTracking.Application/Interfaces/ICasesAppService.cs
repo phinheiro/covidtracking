@@ -10,8 +10,8 @@ namespace BoxTI.Challenge.CovidTracking.Application.Interfaces
         Task<IEnumerable<CasesViewModel>> GetAllCasesAsync();
         Task<CasesViewModel> GetCasesByCountryAsync(string country);
         Task<IEnumerable<CasesViewModel>> GetOrderedCasesByTotalCases();
-        Task<bool> CreateAsync(CasesViewModel viewmodel);
-        Task<bool> UpdateAsync(CasesViewModel viewmodel);
+        Task<bool> CreateAsync();
+        Task<bool> UpdateAsync(string country);
         Task<bool> InactivateCountryAsync(string country);
 
     }

@@ -2,11 +2,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
-    <PackageReference Include="FluentValidation" Version="10.1.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BoxTI.Challenge.CovidTracking.Domain\BoxTI.Challenge.CovidTracking.Domain.csproj" />
+    <ProjectReference Include="..\BoxTI.Challenge.CovidTracking.ExternalServices\BoxTI.Challenge.CovidTracking.ExternalServices.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

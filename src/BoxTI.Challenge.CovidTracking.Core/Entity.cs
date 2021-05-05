@@ -8,6 +8,6 @@ namespace BoxTI.Challenge.CovidTracking.Core.Entities
         {
             Id = Guid.NewGuid();
         }
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
     }
 }

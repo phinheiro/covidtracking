@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using BoxTI.Challenge.CovidTracking.Application.ViewModels;
 using BoxTI.Challenge.CovidTracking.Domain.Entities;
+using BoxTI.Challenge.CovidTracking.ExternalServices.ViewModels;
 
 namespace BoxTI.Challenge.CovidTracking.Application.AutoMapper
 {
@@ -8,9 +8,9 @@ namespace BoxTI.Challenge.CovidTracking.Application.AutoMapper
     {
         public ViewModelToDomainMapping()
         {
-            CreateMap<CasesViewModel, Cases>().ConstructUsing(c =>
-                new Cases(c.ActiveCases, c.Country, c.LastUpdate, c.NewCases,
-                c.NewDeaths, c.TotalCases, c.TotalDeaths, c.TotalRecovered));
+            CreateMap<CovidTrackingApiViewModel, Cases>().ConstructUsing(c =>
+                new Cases(int.Parse(c.ActiveCases), c.Country, c.LastUpdate, c.NewCases,
+                c.NewDeaths, int.Parse(c.TotalCases), int.Parse(c.TotalDeaths), int.Parse(c.TotalRecovered)));
         }
     }
 }

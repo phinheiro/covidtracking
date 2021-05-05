@@ -25,6 +25,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BoxTI.Challenge.CovidTracking.Application\BoxTI.Challenge.CovidTracking.Application.csproj" />
     <ProjectReference Include="..\BoxTI.Challenge.CovidTracking.Data\BoxTI.Challenge.CovidTracking.Data.csproj" />
+    <ProjectReference Include="..\BoxTI.Challenge.CovidTracking.ExternalServices\BoxTI.Challenge.CovidTracking.ExternalServices.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

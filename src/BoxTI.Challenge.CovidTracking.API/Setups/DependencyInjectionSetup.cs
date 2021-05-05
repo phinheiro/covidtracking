@@ -6,6 +6,8 @@ using BoxTI.Challenge.CovidTracking.Application.Services;
 using BoxTI.Challenge.CovidTracking.Data;
 using BoxTI.Challenge.CovidTracking.Data.Repositories;
 using BoxTI.Challenge.CovidTracking.Domain.Interfaces;
+using BoxTI.Challenge.CovidTracking.ExternalServices.Interfaces;
+using BoxTI.Challenge.CovidTracking.ExternalServices.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BoxTI.Challenge.CovidTracking.API.Setups
@@ -24,6 +26,9 @@ namespace BoxTI.Challenge.CovidTracking.API.Setups
 
             // Application services
             services.AddScoped<ICasesAppService, CasesAppService>();
+
+            // External services
+            services.AddScoped<ICovidTrackingService, CovidTrackingService>();
         }
     }
 }

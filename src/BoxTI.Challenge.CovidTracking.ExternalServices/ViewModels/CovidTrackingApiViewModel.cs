@@ -6,7 +6,7 @@ namespace BoxTI.Challenge.CovidTracking.ExternalServices.ViewModels
     public class CovidTrackingApiViewModel
     {
         [JsonProperty("Active Cases_text")]
-        public int ActiveCases { get; set; }
+        public string ActiveCases { get; set; }
 
         [JsonProperty("Country_text")]
         public string Country { get; set; }
@@ -21,12 +21,12 @@ namespace BoxTI.Challenge.CovidTracking.ExternalServices.ViewModels
         public string NewDeaths { get; set; }
 
         [JsonProperty("Total Cases_text")]
-        public int TotalCases { get; set; }
+        public string TotalCases { get; set; }
 
         [JsonProperty("Total Deaths_text")]
-        public int TotalDeaths { get; set; }
+        public string TotalDeaths { get; set; }
 
         [JsonProperty("Total Recovered_text")]
-        public int TotalRecovered { get; set; }
+        public string TotalRecovered { get; set; }
     }
 }

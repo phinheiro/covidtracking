@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BoxTI.Challenge.CovidTracking.Core.Data;
@@ -9,8 +10,9 @@ namespace BoxTI.Challenge.CovidTracking.Domain.Interfaces
     {
         Task<IEnumerable<Cases>> GetAllAsync();
         Task<Cases> GetByCountryAsync(string country);
+        Task<bool> ExistData(string country);
         Task<IEnumerable<Cases>> OrderByTotalCasesAsync();
-        void Add(Cases caseData);
+        void Add(List<Cases> caseData);
         void Update(Cases caseData);
     }
 }

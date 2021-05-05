@@ -32,5 +32,16 @@ namespace BoxTI.Challenge.CovidTracking.Domain.Entities
         public bool Active { get; private set; }
 
         public bool Deactivate() => Active = false;
+
+        public void UpdateData(Cases newData)
+        {
+            ActiveCases = newData.ActiveCases;
+            LastUpdate = newData.LastUpdate;
+            NewCases = newData.NewCases;
+            NewDeaths = newData.NewDeaths;
+            TotalCases = newData.TotalCases;
+            TotalDeaths = newData.TotalDeaths;
+            TotalRecovered = newData.TotalRecovered;
+        }
     }
 }
